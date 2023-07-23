@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>美国军队部署概览</title>
+  <style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-image: url('img/部署页面背景图.jpg');
+	  background-size: cover;
+	}  
+	  
+	/* Styles for the cards */
+	  .card {
+	    border-radius: 10px; /* 添加圆角 */
+	    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 添加向外的阴影效果 */
+	  }  
+
+    .card-container {
+      width: 990px; /* 调整卡片容器的宽度 */
+      height: 600px; /* 调整卡片容器的高度 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .cards {
+      width: calc(100% * 3);
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .card {
+      width: 33.33%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-style: preserve-3d;
+    }
+
+    .card:first-child {
+      transform: translateX(0%);
+    }
+
+    .card:nth-child(2) {
+      transform: translateX(100%);
+    }
+
+    .card:last-child {
+      transform: translateX(200%);
+    }
+
+    .card-container:hover .cards {
+      transform: translateX(-33.33%);
+    }
+
+    /* Styles for the content inside the cards */
+
+    .card-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      font-size: 28px; /* 调整卡片内容的字体大小 */
+    }
+
+    /* Styles for the table in the first card */
+
+    .card-content table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+    }
+
+    .card-content table td {
+      border: 1px solid white;
+      padding: 15px; /* 调整表格格子的内边距 */
+    }
+
+    /* Styles for the text in the second card */
+
+    .card-content:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px; /* 调整文本卡片的内边距 */
+    }
+
+    .card-content:nth-child(2) p {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    /* Styles for the text in the third card */
+
+    .card-content:last-child {
+      text-align: center;
+    }
+
+    /* Styles for the navigation buttons */
+
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-button {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: white;
+      font-size: 24px; /* 调整导航按钮的字体大小 */
+      padding: 15px 30px; /* 调整导航按钮的内边距 */
+      cursor: pointer;
+    }
+
+    /* Background images for the cards */
+
+    .card1 {
+      background-image: url('img/美军部署_卡片1.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .card2 {
+      background-image: url('img/美国部署_卡片2.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .card3 {
+      background-image: url('img/卡片_3背景.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="cards">
+      <div class="card card1">
+        <div class="card-content">
+          <table>
+            <tr>
+              <td>地</td>
+              <td>区</td>
+              <td>总数</td>
+              <td>陆军</td>
+              <td>海军</td>
+              <td>海军陆战队</td>
+              <td>空军</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>本土</td>
+              <td>1,123,219</td>
+              <td>438,112</td>
+              <td>264,618</td>
+              <td>159,321</td>
+              <td>261,168</td>
+            </tr>
+            <tr>
+              <td>美 国</td>
+              <td>夏威夷</td>
+              <td>49,242</td>
+              <td>22,549</td>
+              <td>14,984</td>
+              <td>6,579</td>
+              <td>5,130</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>阿拉斯加</td>
+              <td>21,280</td>
+              <td>13,643</td>
+              <td>44</td>
+              <td>16</td>
+              <td>7,577</td>
+            </tr>
+            <tr>
+              <td>关</td>
+              <td>岛</td>
+              <td>5,646</td>
+              <td>68</td>
+              <td>3,404</td>
+              <td>183</td>
+              <td>1,991</td>
+            </tr>
+            <tr>
+              <td>波多</td>
+              <td>黎各</td>
+              <td>162</td>
+              <td>92</td>
+              <td>20</td>
+              <td>21</td>
+              <td>29</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="card card2">
+        <div class="card-content">
+          <p>驻欧洲地区11.6万人，分别驻在比利时、德国、英国、意大利、土耳其、西班牙、葡萄牙、卢森堡、希腊、荷兰、挪威等国，以及部署于地中海的舰艇上，其中驻德国7万人。
+			驻亚太地区10.5万余人。其中驻日美军4万人，驻韩美军2.8万人。
+			驻西亚—北非地区2万余人，分别驻扎在沙特阿拉伯、科威特、埃及、卡塔尔和巴林等国。其中，驻沙特阿拉伯0.32万人，科威特0.22万人。常驻波斯湾及其附近海域的第5舰队，一般为1个航母战斗群。
+			驻美洲地区其他国家1万余人，其中驻巴拿马3400人，古巴关塔那摩湾1400人，海地189人，洪都拉斯720人，加拿大208人，百慕大800人。</p>
+          
+        </div>
+      </div>
+      <div class="card card3">
+        <div class="card-content">
+          <p>截止至1998年2月，美军在国内外拥有军事设施969个，其中陆军184个、海军164个、海军陆战队27个、空军96个，其余为国防部及后备役部队的设施。海外军事设施203个，遍布世界32个国家和地区，其中陆军102个、海军32个、海军陆战队9个、空军50个，其余为国防部和跨军种联合设施。 </p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <div class="nav-button" onclick="prevCard()">&lt; 上一个</div>
+      <div class="nav-button" onclick="nextCard()">下一个 &gt;</div>
+    </div>
+  </div>
+
+  <script>
+    var currentIndex = 0;
+    var cards = document.querySelector('.cards');
+
+    function prevCard() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        cards.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+      }
+    }
+
+    function nextCard() {
+      if (currentIndex < 2) {
+        currentIndex++;
+        cards.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+      }
+    }
+  </script>
+</body>
+</html>

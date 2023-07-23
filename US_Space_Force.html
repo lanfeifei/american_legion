@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>美国太空军</title>
+  <style>
+	  body {
+	    background-image: url(img/美国太空军背景图.jpg);
+	    background-size: cover;
+	  }
+	  
+	  .container {
+	    margin: 75px auto;
+	    width: 80%;
+	    max-width: 1200px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	  }
+	  
+	  .card {
+	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    display: none;
+	    width: 100%;
+	    max-width: 1200px;
+	    height: 450px;
+	    margin-bottom: 75px;
+	    position: relative;
+	  }
+	  
+	  .card.active {
+	    display: flex;
+	  }
+	  
+	  .card-img {
+	    width: 40%;
+	    height: 100%;
+	    border-radius: 15px 0 0 15px;
+	    overflow: hidden;
+	  }
+	  
+	  .card-img img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	  
+	  .card-text {
+	    width: 60%;
+	    height: 100%;
+	    padding: 30px;
+	    background: linear-gradient(to bottom, white, #87CEFA);
+	    border-radius: 0 15px 15px 0;
+	  }
+	  
+	  .card-text h2 {
+	    font-size: 36px;
+	    margin-bottom: 30px;
+	  }
+	  
+	  .card-text p {
+	    font-size: 24px;
+	    line-height: 1.5;
+	  }
+	  
+	  .buttons {
+	    display: flex;
+	    justify-content: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 1;
+	  }
+	  
+	  .buttons button {
+	    background-color: white;
+	    border-radius: 50%;
+	    width: 75px;
+	    height: 75px;
+	    margin: 0 50px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	  }
+	  
+	  .buttons button img {
+	    width: 45px;
+	    height: 45px;
+	  }
+	  
+	  .up img {
+	    transform: rotate(-90deg);
+	  }
+	  
+	  .down img {
+	    transform: rotate(90deg);
+	  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card active">
+      <div class="card-img">
+        <img src="img/美国太空军_卡片1.jpg" alt="图片1">
+      </div>
+      <div class="card-text">
+        <h2>美国太空军</h2>
+        <p>美国太空军（英语：United States Space Force，缩写为：USSF）是美军的太空军事部门。它是自1947年美国空军独立以来成立的第六个军事部门和第一个新设军种，也是国防部三大军事部门之一下属的一个部门。 </p>
+		<p>美国太空军的任务是“组织，训练和装备太空军，以保护美国和盟国在太空方面的利益，并为联合部队提供太空能力。其职责包括发展军事太空专业人员，建设军事太空系统，研究有关太空力量的军事理论，并组织太空军战斗司令部。 </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国太空军_卡片2.jpg" alt="图片2">
+      </div>
+      <div class="card-text">
+        <h2>主要任务</h2>
+        <p>●保持太空优势
+			太空领域意识（军事，民用和商业）
+			进攻和防御太空控制
+			太空部队和卫星作战的指挥与控制
+			太空对地球行动的支援（例如卫星通信）</p>
+		<p>●太空服务支援（例如，军事，民用和商业运营商的太空运输和太空靶场操作）
+			从太空中支援核子指挥，控制，通信和核爆探测
+			从太空中支援导弹预警和导弹防御运作</p>		
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="up"><img src="img/上箭头.jpg" alt="前◁进"></button>
+      <button class="down"><img src="img/下箭头.jpg" alt="后◁退"></button>
+    </div>
+  </div>
+  <script>
+	  const cards = document.querySelectorAll('.card');
+	  const buttons = document.querySelectorAll('.buttons button');
+	  
+	  let currentCard = 0;
+	  
+	  function showCard(cardIndex) {
+	    cards[currentCard].classList.remove('active');
+	    cards[cardIndex].classList.add('active');
+	    currentCard = cardIndex;
+	  }
+	  
+	  buttons.forEach((button, index) => {
+	    button.addEventListener('click', () => {
+	      if (index === 0) {
+	        if (currentCard === 0) {
+	          showCard(cards.length - 1);
+	        } else {
+	          showCard(currentCard - 1);
+	        }
+	      } else {
+	        if (currentCard === cards.length - 1) {
+	          showCard(0);
+	        } else {
+	          showCard(currentCard + 1);
+	        }
+	      }
+	    });
+	  });
+	  
+	  document.addEventListener('keydown', (event) => {
+	    if (event.key === 'ArrowUp') {
+	      if (currentCard === 0) {
+	        showCard(cards.length - 1);
+	      } else {
+	        showCard(currentCard - 1);
+	      }
+	    } else if (event.key === 'ArrowDown') {
+	      if (currentCard === cards.length - 1) {
+	        showCard(0);
+	      } else {
+	        showCard(currentCard + 1);
+	      }
+	    }
+	  });
+	  
+	  showCard(0);
+
+  </script>
+</body>
+
+</html>

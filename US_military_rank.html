@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>美国军衔</title>
+  <style>
+	  .container {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+	    height: 100vh;
+	    background-image: url('img/军衔背景.jpg');
+	    background-size: cover;
+	  }
+	  
+	  .row {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    margin-bottom: 20px;
+	  }
+	  
+	  .title {
+	    font-size: 40px;
+	    font-weight: bold;
+	    color: #fff;
+	    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	    background-color: rgba(255, 255, 255, 0.2);
+	    padding: 10px;
+	    margin: 0 20px;
+	    border-radius: 10px;
+	    cursor: pointer;
+	    transition: all 0.3s ease-in-out;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	  }
+	  
+	  .title:hover {
+	    transform: scale(1.1);
+	  }
+	  
+	  img {
+	    width: 50px;
+	    height: 122px;
+	    margin: 0 10px;
+	    object-fit: cover;
+	    border-radius: 10px;
+	    cursor: pointer;
+	    transition: all 0.3s ease-in-out;
+	  }
+	  
+	  img:hover {
+	    transform: scale(1.1);
+	  }
+	  
+	  .image-container {
+	    position: relative;
+	  }
+	  
+	  .image-description {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    background-color: rgba(0, 0, 0, 0.5);
+	    color: #fff;
+	    text-align: center;
+	    padding: 10px;
+	    box-sizing: border-box;
+	  }
+	  
+	  .title span {
+	    display: none;
+	  }
+	  
+	  .title:hover span {
+	    display: block;
+	  }
+	  
+	  .title > span {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	  }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="title" onclick="goToLink('js/US_Army.html')"><span>美国陆军</span></div>
+      <div class="image-container">
+        <img src="img/五星上将.svg.png" alt="五星上将">
+        <div class="image-description">★上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/上将.svg.png" alt="上将">
+        <div class="image-description">上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/中奖.svg.png" alt="图片描述">
+        <div class="image-description">中将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/少将.svg.png" alt="图片描述">
+        <div class="image-description">少将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/准将.svg.png" alt="图片描述">
+        <div class="image-description">准将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/上校.svg.png" alt="图片描述">
+        <div class="image-description">上校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/中校.svg.png" alt="图片描述">
+        <div class="image-description">中校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/少校.svg.png" alt="图片描述">
+        <div class="image-description">少校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/上尉.svg.png" alt="图片描述">
+        <div class="image-description">上尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/中尉.svg.png" alt="图片描述">
+        <div class="image-description">中尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/少尉.svg.png" alt="图片描述">
+        <div class="image-description">少尉</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="title" onclick="goToLink('链接地址')"><span>美国海军</span></div>
+      <div class="image-container">
+        <img src="img/海军五星上将.png" alt="图片描述">
+        <div class="image-description">★上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军上将.png" alt="海军上将">
+        <div class="image-description">上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军中将.png" alt="海军中将">
+        <div class="image-description">中将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军少将.png" alt="图片描述">
+        <div class="image-description">少将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军准将.png" alt="图片描述">
+        <div class="image-description">准将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军上校.png" alt="图片描述">
+        <div class="image-description">上校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军中校.png" alt="图片描述">
+        <div class="image-description">中校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军少校.png" alt="少校">
+        <div class="image-description">少校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军上尉.png" alt="图片描述">
+        <div class="image-description">上尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军中尉.png" alt="图片描述">
+        <div class="image-description">中尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/海军少尉.png" alt="图片描述">
+        <div class="image-description">少尉</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="title" onclick="goToLink('链接地址')"><span>美国空军</span></div>
+      <div class="image-container">
+        <img src="img/空军五星上将.png" alt="图片描述">
+        <div class="image-description">★上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军上将.png" alt="图片描述">
+        <div class="image-description">上将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军中将.png" alt="图片描述">
+        <div class="image-description">中将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军少将.png" alt="图片描述">
+        <div class="image-description">少将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军准将.png" alt="图片描述">
+        <div class="image-description">准将</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军上校.png" alt="图片描述">
+        <div class="image-description">上校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军中校.png" alt="图片描述">
+        <div class="image-description">中校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军少校.png" alt="图片描述">
+        <div class="image-description">少校</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军上尉.png" alt="图片描述">
+        <div class="image-description">上尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军中尉.png" alt="图片描述">
+        <div class="image-description">中尉</div>
+      </div>
+      <div class="image-container">
+        <img src="img/空军少尉.png" alt="图片描述">
+        <div class="image-description">少尉</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

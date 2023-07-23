@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>美国海军</title>
+  <style>
+	  body {
+	    background-image: url(img/美国海军背景图.JPG);
+	    background-size: cover;
+	  }
+	  
+	  .container {
+	    margin: 75px auto;
+	    width: 80%;
+	    max-width: 1200px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	  }
+	  
+	  .card {
+	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    display: none;
+	    width: 100%;
+	    max-width: 1200px;
+	    height: 450px;
+	    margin-bottom: 75px;
+	    position: relative;
+	  }
+	  
+	  .card.active {
+	    display: flex;
+	  }
+	  
+	  .card-img {
+	    width: 40%;
+	    height: 100%;
+	    border-radius: 15px 0 0 15px;
+	    overflow: hidden;
+	  }
+	  
+	  .card-img img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	  
+	  .card-text {
+	    width: 60%;
+	    height: 100%;
+	    padding: 30px;
+	    background: linear-gradient(to bottom, white, #87CEFA);
+	    border-radius: 0 15px 15px 0;
+	  }
+	  
+	  .card-text h2 {
+	    font-size: 36px;
+	    margin-bottom: 30px;
+	  }
+	  
+	  .card-text p {
+	    font-size: 24px;
+	    line-height: 1.5;
+	  }
+	  
+	  .buttons {
+	    display: flex;
+	    justify-content: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 1;
+	  }
+	  
+	  .buttons button {
+	    background-color: white;
+	    border-radius: 50%;
+	    width: 75px;
+	    height: 75px;
+	    margin: 0 50px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	  }
+	  
+	  .buttons button img {
+	    width: 45px;
+	    height: 45px;
+	  }
+	  
+	  .up img {
+	    transform: rotate(-90deg);
+	  }
+	  
+	  .down img {
+	    transform: rotate(90deg);
+	  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card active">
+      <div class="card-img">
+        <img src="img/美国海军_卡片1.jpg" alt="图片1">
+      </div>
+      <div class="card-text">
+        <h2>美国海军</h2>
+		<p>美国海军（英语：United States Navy，缩写：USN或U.S. Navy），是一个美军军种，负责管理所有与海军有关的事务。其职责为：“配备、训练和武装一支有能力赢得战争、阻止入侵和保证海域自由的海军作战部队。</p>
+        <p>美国海军兵力为33.16万人[10]（不包括海军陆战队）。编有6个舰队，即第2舰队（大西洋）、第3舰队（东、南、北太平洋）、第4舰队（中南美洲海域）、第5舰队（印度洋、波斯湾、红海）、第6舰队（地中海、黑海）、第7舰队（西太平洋、印度洋）。还设一海军运输司令部。</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国海军_卡片2.jpg" alt="图片2">
+      </div>
+      <div class="card-text">
+        <h2>主要装备</h2>
+        <p>●潜艇69艘：其中战略潜艇18艘（俄亥俄级）、攻击潜艇50艘（洛杉矶级28艘、海狼级3艘、维吉尼亚级19艘）、其他用途1艘
+			航空母舰11艘：尼米兹级10艘，福特级航空母舰1艘. </p>
+		<p>●其中每艘航母配备一舰载机联队，每个联队一般配备3个F/A-18战斗攻击机中队、1个S-3B和EP-3反潜飞机中队、1个SH-60反潜直升机中队、1个EA-6B电子战飞机中队、1个E-2C预警机中队和1个C-2支援飞机中队。		
+			巡洋舰17艘：提康德罗加级17艘
+			驱逐舰72艘：伯克级70艘，朱姆沃尔特级2艘
+			滨海战斗舰24艘：自由级11艘、独立级13艘</p>		
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="up"><img src="img/上箭头.jpg" alt="前◁进"></button>
+      <button class="down"><img src="img/下箭头.jpg" alt="后◁退"></button>
+    </div>
+  </div>
+  <script>
+	  const cards = document.querySelectorAll('.card');
+	  const buttons = document.querySelectorAll('.buttons button');
+	  
+	  let currentCard = 0;
+	  
+	  function showCard(cardIndex) {
+	    cards[currentCard].classList.remove('active');
+	    cards[cardIndex].classList.add('active');
+	    currentCard = cardIndex;
+	  }
+	  
+	  buttons.forEach((button, index) => {
+	    button.addEventListener('click', () => {
+	      if (index === 0) {
+	        if (currentCard === 0) {
+	          showCard(cards.length - 1);
+	        } else {
+	          showCard(currentCard - 1);
+	        }
+	      } else {
+	        if (currentCard === cards.length - 1) {
+	          showCard(0);
+	        } else {
+	          showCard(currentCard + 1);
+	        }
+	      }
+	    });
+	  });
+	  
+	  document.addEventListener('keydown', (event) => {
+	    if (event.key === 'ArrowUp') {
+	      if (currentCard === 0) {
+	        showCard(cards.length - 1);
+	      } else {
+	        showCard(currentCard - 1);
+	      }
+	    } else if (event.key === 'ArrowDown') {
+	      if (currentCard === cards.length - 1) {
+	        showCard(0);
+	      } else {
+	        showCard(currentCard + 1);
+	      }
+	    }
+	  });
+	  
+	  showCard(0);
+
+  </script>
+</body>
+
+</html>

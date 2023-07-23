@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>美国海军陆战队</title>
+  <style>
+	  body {
+	    background-image: url(img/卡片_3背景.jpg);
+	    background-size: cover;
+	  }
+	  
+	  .container {
+	    margin: 75px auto;
+	    width: 80%;
+	    max-width: 1200px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	  }
+	  
+	  .card {
+	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    display: none;
+	    width: 100%;
+	    max-width: 1200px;
+	    height: 450px;
+	    margin-bottom: 75px;
+	    position: relative;
+	  }
+	  
+	  .card.active {
+	    display: flex;
+	  }
+	  
+	  .card-img {
+	    width: 40%;
+	    height: 100%;
+	    border-radius: 15px 0 0 15px;
+	    overflow: hidden;
+	  }
+	  
+	  .card-img img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	  
+	  .card-text {
+	    width: 60%;
+	    height: 100%;
+	    padding: 30px;
+	    background: linear-gradient(to bottom, white, #87CEFA);
+	    border-radius: 0 15px 15px 0;
+	  }
+	  
+	  .card-text h2 {
+	    font-size: 36px;
+	    margin-bottom: 30px;
+	  }
+	  
+	  .card-text p {
+	    font-size: 24px;
+	    line-height: 1.5;
+	  }
+	  
+	  .buttons {
+	    display: flex;
+	    justify-content: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 1;
+	  }
+	  
+	  .buttons button {
+	    background-color: white;
+	    border-radius: 50%;
+	    width: 75px;
+	    height: 75px;
+	    margin: 0 50px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	  }
+	  
+	  .buttons button img {
+	    width: 45px;
+	    height: 45px;
+	  }
+	  
+	  .up img {
+	    transform: rotate(-90deg);
+	  }
+	  
+	  .down img {
+	    transform: rotate(90deg);
+	  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card active">
+      <div class="card-img">
+        <img src="img/美国海军陆战队_卡片1.jpg" alt="图片1">
+      </div>
+      <div class="card-text">
+        <h2>美国海军陆战队</h2>
+		<p>美国海军陆战队（英语：United States Marine Corps，缩写：USMC），是美国军队中的陆战队及两栖作战部队，其主要职责是运用美国海军的舰队（含航空兵），快速抵达全球各危机发生地执行战斗任务。美国陆战队属于美国军队中的一个独立军种，与美国海军地位平行，同属美国国防部下属的美国海军部管辖，其英语军衔名称与陆军、空军相同。负责美国驻外使馆保安的使馆警卫队亦隶属于美国陆战队。 </p>
+        <p>美国海军陆战队兵力为20.36万人。编有3个海军陆战师、3个勤务支援大队、1个安全保密部队营、1个营级的驻外使馆警卫队。 </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国海军陆战队_卡片2.jpg" alt="图片2">
+      </div>
+      <div class="card-text">
+        <h2>主要装备</h2>
+        <p>●M1主战坦克403辆、轻装甲车735辆、两栖装甲车1321辆、牵引火炮930门、反坦克导弹2361具、火箭筒2754具，迫击炮613门。航空兵兵力有3.65万人，编有3个联队，装备各型飞机约520架，其中直升机约500架。</p>		
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="up"><img src="img/上箭头.jpg" alt="前◁进"></button>
+      <button class="down"><img src="img/下箭头.jpg" alt="后◁退"></button>
+    </div>
+  </div>
+  <script>
+	  const cards = document.querySelectorAll('.card');
+	  const buttons = document.querySelectorAll('.buttons button');
+	  
+	  let currentCard = 0;
+	  
+	  function showCard(cardIndex) {
+	    cards[currentCard].classList.remove('active');
+	    cards[cardIndex].classList.add('active');
+	    currentCard = cardIndex;
+	  }
+	  
+	  buttons.forEach((button, index) => {
+	    button.addEventListener('click', () => {
+	      if (index === 0) {
+	        if (currentCard === 0) {
+	          showCard(cards.length - 1);
+	        } else {
+	          showCard(currentCard - 1);
+	        }
+	      } else {
+	        if (currentCard === cards.length - 1) {
+	          showCard(0);
+	        } else {
+	          showCard(currentCard + 1);
+	        }
+	      }
+	    });
+	  });
+	  
+	  document.addEventListener('keydown', (event) => {
+	    if (event.key === 'ArrowUp') {
+	      if (currentCard === 0) {
+	        showCard(cards.length - 1);
+	      } else {
+	        showCard(currentCard - 1);
+	      }
+	    } else if (event.key === 'ArrowDown') {
+	      if (currentCard === cards.length - 1) {
+	        showCard(0);
+	      } else {
+	        showCard(currentCard + 1);
+	      }
+	    }
+	  });
+	  
+	  showCard(0);
+
+  </script>
+</body>
+
+</html>

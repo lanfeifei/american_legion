@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>美国空军</title>
+  <style>
+	  body {
+	    background-image: url(img/丑闻右图.jpg);
+	    background-size: cover;
+	  }
+	  
+	  .container {
+	    margin: 75px auto;
+	    width: 80%;
+	    max-width: 1200px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	  }
+	  
+	  .card {
+	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    display: none;
+	    width: 100%;
+	    max-width: 1200px;
+	    height: 450px;
+	    margin-bottom: 75px;
+	    position: relative;
+	  }
+	  
+	  .card.active {
+	    display: flex;
+	  }
+	  
+	  .card-img {
+	    width: 40%;
+	    height: 100%;
+	    border-radius: 15px 0 0 15px;
+	    overflow: hidden;
+	  }
+	  
+	  .card-img img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	  
+	  .card-text {
+	    width: 60%;
+	    height: 100%;
+	    padding: 30px;
+	    background: linear-gradient(to bottom, white, #87CEFA);
+	    border-radius: 0 15px 15px 0;
+	  }
+	  
+	  .card-text h2 {
+	    font-size: 36px;
+	    margin-bottom: 30px;
+	  }
+	  
+	  .card-text p {
+	    font-size: 24px;
+	    line-height: 1.5;
+	  }
+	  
+	  .buttons {
+	    display: flex;
+	    justify-content: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 1;
+	  }
+	  
+	  .buttons button {
+	    background-color: white;
+	    border-radius: 50%;
+	    width: 75px;
+	    height: 75px;
+	    margin: 0 50px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	  }
+	  
+	  .buttons button img {
+	    width: 45px;
+	    height: 45px;
+	  }
+	  
+	  .up img {
+	    transform: rotate(-90deg);
+	  }
+	  
+	  .down img {
+	    transform: rotate(90deg);
+	  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card active">
+      <div class="card-img">
+        <img src="img/丑闻背景图.jpg" alt="图片1">
+      </div>
+      <div class="card-text">
+        <h2>美国空军</h2>
+		<p>美国空军（英语：United States Air Force、缩写：USAF）是美国军队中的空军军种。其任务是“透过空中、外太空和网络空间中的武力保护美国及其利益”，它于1947年9月18日正式成立。</p>
+        <p>美国空军兵力为33.34万人，编有空中作战司令部和空中机动司令部。空中作战司令部辖4个航空队（其中1个为洲际弹道导弹航空队）、23个飞行联队；空中机动司令部辖2个航空队、13个飞行联队。</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国空军_卡片1.jpg" alt="图片2">
+      </div>
+      <div class="card-text">
+        <h2>主要装备</h2>
+        <p>●远程轰炸机208架，其中B-52H型94架、B-2A型20架、B-1B型93架；
+			侦察机63架，其中U-2R／S型36架、SR-71型6架（现已退役），RC-135型21架；
+			空中预警／指挥机40架，其中E-3B／C型33架、EC-135型3架，E-4B型4架；</p>
+		<p>●战术飞机2598架，其中F-15型714架、F-16型1443架、F-22A型187架、F-117型45架（已退出现役）、A-10A型234架、OA-10A型130架、EC-18型先进测距飞机3架、E-8C型联合监视与目标攻击雷达系统飞机8架；
+			运输机1100架；
+			加油机606架；
+			教练机1200架；
+			直升机220架。</p>		
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="up"><img src="img/上箭头.jpg" alt="前◁进"></button>
+      <button class="down"><img src="img/下箭头.jpg" alt="后◁退"></button>
+    </div>
+  </div>
+  <script>
+	  const cards = document.querySelectorAll('.card');
+	  const buttons = document.querySelectorAll('.buttons button');
+	  
+	  let currentCard = 0;
+	  
+	  function showCard(cardIndex) {
+	    cards[currentCard].classList.remove('active');
+	    cards[cardIndex].classList.add('active');
+	    currentCard = cardIndex;
+	  }
+	  
+	  buttons.forEach((button, index) => {
+	    button.addEventListener('click', () => {
+	      if (index === 0) {
+	        if (currentCard === 0) {
+	          showCard(cards.length - 1);
+	        } else {
+	          showCard(currentCard - 1);
+	        }
+	      } else {
+	        if (currentCard === cards.length - 1) {
+	          showCard(0);
+	        } else {
+	          showCard(currentCard + 1);
+	        }
+	      }
+	    });
+	  });
+	  
+	  document.addEventListener('keydown', (event) => {
+	    if (event.key === 'ArrowUp') {
+	      if (currentCard === 0) {
+	        showCard(cards.length - 1);
+	      } else {
+	        showCard(currentCard - 1);
+	      }
+	    } else if (event.key === 'ArrowDown') {
+	      if (currentCard === cards.length - 1) {
+	        showCard(0);
+	      } else {
+	        showCard(currentCard + 1);
+	      }
+	    }
+	  });
+	  
+	  showCard(0);
+
+  </script>
+</body>
+
+</html>

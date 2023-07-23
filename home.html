@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>美军概览</title>
+    <style>
+		* {
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		}
+		
+		body {
+		    background-image: url('img/wallhaven-47vw2v.jpg');
+		    background-size: cover;
+		    background-position: center;
+		    font-family: Arial, sans-serif;
+		}
+		
+		.navbar {
+		    width: 600px;
+		    height: 50px;
+		    margin: 50px auto;
+		    background-color: rgba(255, 255, 255, 0.2);
+		    backdrop-filter: blur(10px);
+		    border-radius: 10px;
+		}
+		
+		ul {
+		    list-style: none;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    height: 100%;
+		}
+		
+		li {
+		    margin: 0 20px;
+		}
+		
+		a {
+		    text-decoration: none;
+		    color: #000;
+		    transition: all 0.3s ease;
+		}
+		
+		a:hover {
+		    color: #fff;
+		}
+		
+		.content {
+		    width: 600px;
+		    margin: 50px auto;
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: center;
+		}
+		
+		.row {
+		    margin: 20px 0;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    width: 100%;
+		}
+		
+		.image {
+		    position: relative;
+		    width: calc(33.33% - 10px);
+		    height: 190px;
+		    margin: 0 5px;
+		    border-radius: 10px;
+		    overflow: hidden;
+		}
+		
+		.image img {
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		    transition: all 0.3s ease;
+		}
+		
+		.image:hover img {
+		    transform: scale(1.1);
+		}
+		
+		.overlay {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    background-color: rgba(0, 0, 0, 0.5);
+		    opacity: 0;
+		    transition: all 0.3s ease;
+		}
+		
+		.overlay a {
+		    color: #fff;
+		    text-decoration: none;
+		    font-size: 20px;
+		    opacity: 0;
+		    transition: all 0.3s ease;
+		}
+		
+		.image:hover .overlay {
+		    opacity: 1;
+		}
+		
+		.image:hover .overlay a {
+		    opacity: 1;
+		}
+
+	</style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">☯首页</a></li>
+            <li><a href="US_military_rank.html">✪军衔</a></li>
+            <li><a href="US_military_deployment.html">➹部署</a></li>
+            <li><a href="US_military_scandal.html">☢丑闻</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="image">
+                <img src="img/Mark_of_the_United_States_Army.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Army.html">美国陆军</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="img/Emblem_of_the_United_States_Navy.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Navy.html">美国海军</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="img/Mark_of_the_United_States_Air_Force.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Air_Force.html">美国空军</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="img/Emblem_of_the_United_States_Marine_Corps.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Marine_Corps.html">美国海军陆战队</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="img/Seal_of_the_United_States_Coast_Guard.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Coast_Guard.html">美国海岸警卫队</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="img/Seal_of_the_United_States_Space_Force.svg.png" alt="image">
+                <div class="overlay">
+                    <a href="US_Space_Force.html">美国太空军</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script>
+		// JavaScript code
+		const images = document.querySelectorAll('.image');
+		
+		images.forEach(image => {
+		    const link = image.querySelector('a');
+		    const img = image.querySelector('img');
+		
+		    image.addEventListener('click', () => {
+		        window.location.href = link.href;
+		    });
+		
+		    image.addEventListener('mouseover', () => {
+		        img.style.transform = 'scale(1.1)';
+		        link.style.opacity = 1;
+		    });
+		
+		    image.addEventListener('mouseout', () => {
+		        img.style.transform = 'scale(1)';
+		        link.style.opacity = 0;
+		    });
+		});
+
+	</script>
+</body>
+</html>

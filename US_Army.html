@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>美国陆军</title>
+  <style>
+	  body {
+	    background-image: url(img/美国陆军_卡片1.JPG);
+	    background-size: cover;
+	  }
+	  
+	  .container {
+	    margin: 75px auto;
+	    width: 80%;
+	    max-width: 1200px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	  }
+	  
+	  .card {
+	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    display: none;
+	    width: 100%;
+	    max-width: 1200px;
+	    height: 450px;
+	    margin-bottom: 75px;
+	    position: relative;
+	  }
+	  
+	  .card.active {
+	    display: flex;
+	  }
+	  
+	  .card-img {
+	    width: 40%;
+	    height: 100%;
+	    border-radius: 15px 0 0 15px;
+	    overflow: hidden;
+	  }
+	  
+	  .card-img img {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	  
+	  .card-text {
+	    width: 60%;
+	    height: 100%;
+	    padding: 30px;
+	    background: linear-gradient(to bottom, white, #87CEFA);
+	    border-radius: 0 15px 15px 0;
+	  }
+	  
+	  .card-text h2 {
+	    font-size: 36px;
+	    margin-bottom: 30px;
+	  }
+	  
+	  .card-text p {
+	    font-size: 24px;
+	    line-height: 1.5;
+	  }
+	  
+	  .buttons {
+	    display: flex;
+	    justify-content: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 1;
+	  }
+	  
+	  .buttons button {
+	    background-color: white;
+	    border-radius: 50%;
+	    width: 75px;
+	    height: 75px;
+	    margin: 0 50px;
+	    box-shadow: 7.5px 7.5px 15px rgba(0, 0, 0, 0.2);
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	  }
+	  
+	  .buttons button img {
+	    width: 45px;
+	    height: 45px;
+	  }
+	  
+	  .up img {
+	    transform: rotate(-90deg);
+	  }
+	  
+	  .down img {
+	    transform: rotate(90deg);
+	  }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card active">
+      <div class="card-img">
+        <img src="img/美国陆军背景.jpg" alt="图片1">
+      </div>
+      <div class="card-text">
+        <h2>美国陆军</h2>
+		<p>美国陆军（英语：United States Army，縮寫：USA），是美军的陆军军种，是八个制服部队的其中之一。现代美国陆军起源于美国独立战争时期的大陆军，邦联议会在1784年成立美国陆军取代解散的大陆军。</p>
+        <p>美国陆军兵力54.92万人[10]。编有3个集团军群司令部、4个军部、10个作战师（2个装甲师、4个机械化师、2个轻步兵师、1个空中突击师、1个空降师）、5个航空旅、3个装甲骑兵团、6个炮兵旅、7个史崔克旅、9个“爱国者”和2个“复仇者”防空导弹营、3个独立步兵营和1个空降特种部队。 </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国陆军_卡片2.jpg" alt="图片2">
+      </div>
+      <div class="card-text">
+        <h2>基本作战单位</h2>
+        <p>●第1骑兵师，第1装甲师</p>
+		<p>●第1、第2、第3、第4机械化步兵师</p>
+		<p>●第10山地师，第25轻步兵师</p>
+		<p>●第82空降师，第101空中突击师</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img/美国陆军背景图.jpg" alt="图片3">
+      </div>
+      <div class="card-text">
+        <h2>主要装备</h2>
+        <p>●主战坦克M1A1和M1A2等共7683辆；
+			装甲侦察车Tpz-1“狐”113辆；
+			M2和M3步兵战车，共6715辆；
+			装甲输送车M-113型17800辆；
+			各类火炮5699门，其中227毫米多管火箭炮857门，自行火炮2555门。</p>
+		<p>●反坦克导弹：“陶”和“龙”式，共23352具；
+			高炮329门，其中20毫米“火神”式118门；
+			防空导弹：“复仇者”式767部，“爱国者”式485部；
+			各种用途飞机249架；
+			无人驾驶飞机7架；
+			直升机约4923架，其中武装直升机1437架；
+			各型地面监视雷达312部，其中机载38部；
+			两栖舰艇58艘。</p>
+		
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="up"><img src="img/上箭头.jpg" alt="前◁进"></button>
+      <button class="down"><img src="img/下箭头.jpg" alt="后◁退"></button>
+    </div>
+  </div>
+  <script>
+	  const cards = document.querySelectorAll('.card');
+	  const buttons = document.querySelectorAll('.buttons button');
+	  
+	  let currentCard = 0;
+	  
+	  function showCard(cardIndex) {
+	    cards[currentCard].classList.remove('active');
+	    cards[cardIndex].classList.add('active');
+	    currentCard = cardIndex;
+	  }
+	  
+	  buttons.forEach((button, index) => {
+	    button.addEventListener('click', () => {
+	      if (index === 0) {
+	        if (currentCard === 0) {
+	          showCard(cards.length - 1);
+	        } else {
+	          showCard(currentCard - 1);
+	        }
+	      } else {
+	        if (currentCard === cards.length - 1) {
+	          showCard(0);
+	        } else {
+	          showCard(currentCard + 1);
+	        }
+	      }
+	    });
+	  });
+	  
+	  document.addEventListener('keydown', (event) => {
+	    if (event.key === 'ArrowUp') {
+	      if (currentCard === 0) {
+	        showCard(cards.length - 1);
+	      } else {
+	        showCard(currentCard - 1);
+	      }
+	    } else if (event.key === 'ArrowDown') {
+	      if (currentCard === cards.length - 1) {
+	        showCard(0);
+	      } else {
+	        showCard(currentCard + 1);
+	      }
+	    }
+	  });
+	  
+	  showCard(0);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>美国军队丑闻概览</title>
+  <style>
+    body {
+      background: url('img/丑闻背景图.jpg') no-repeat center center fixed; /* 使用背景图片作为背景 */
+      background-size: cover; /* 背景图片尺寸适应 */
+      overflow: hidden; /* 隐藏溢出内容 */
+      margin: 0;
+      padding: 0;
+    }
+
+#card-slider {
+  position: relative;
+  height: 100vh; /* 卡片容器高度 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}
+
+.card {
+  position: absolute;
+  width: 80%; /* 卡片宽度 */
+  max-width: 800px; /* 最大宽度 */
+  height: 70%; /* 卡片高度 */
+  max-height: 500px; /* 最大高度 */
+  background-color: #FFFFFF; /* 卡片背景颜色 */
+  border-radius: 10px; /* 圆角边框 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 外部阴影效果 */
+  left: 50%; /* 水平居中 */
+  top: 50%; /* 垂直居中 */
+  transform: translate(-50%, -50%); /* 水平垂直居中 */
+  display: flex; /* 使用 flex 布局 */
+}
+
+.card .content {
+  flex: 3; /* 内容区域占据 3/5 */
+  padding: 20px;
+  background-position: center right;
+  background-size: cover;
+}
+
+.card .content h2 {
+  margin-top: 0;
+}
+
+.card .image {
+  flex: 2; /* 图片区域占据 2/5 */
+  background-position: center;
+  background-size: cover;
+}
+
+.card .image.left {
+  background-position: left;
+  background-size: cover;
+}
+
+.card .image.right {
+  background-position: right;
+  background-size: cover;
+}
+
+.card1 .content {
+  background-image: linear-gradient(to right, #FFC0CB, #FFFFFF, #FFFFE0);
+}
+
+.card2 .content {
+  background-image: linear-gradient(to right, #FFC0CB, #FFFFFF, #FFFFE0);
+}
+
+.card3 .content {
+  background-image: linear-gradient(to right, #FFC0CB, #FFFFFF, #FFFFE0);
+}
+
+.card4 .content {
+  background-image: linear-gradient(to right, #FFC0CB, #FFFFFF, #FFFFE0);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div id="card-slider">
+    <div class="card card1">
+      <div class="image left" style="background-image: url('img/丑闻_卡片1.jpeg')"></div>
+      <div class="content">
+        <h2>性犯罪</h2>
+        <p>自2005年到2013年，美军被解职的具有中校及以上军衔的指挥官中，超过40%是因为行为不检点。而被解职的所有美军军事指挥官中至少有30%是因为性犯罪的原因，包括性骚扰、通奸和不正当关系等。2005年以来有18名将军被解职，其中10人是因为性犯罪。数据显示，自2005年到2013年，共有255名指挥官被解职，其中78人是因为性犯罪。</p>
+		<p>美国广播公司在2013年公布的报告中称约有20%至40%的女兵曾在军中遭到强奸或性侵害，相当于一般平民受害者的两倍，而且美军中女性军人计划外怀孕的比率非常高，已呈上升的趋势，明显高于普通大众</p>
+		<p>但由于美军的境外军事基地许多拥有法外特权这滋生了境外美军对他国当地居民性暴力，以日本最为典型，早在日本盟军占领时期，关于美军性犯罪案件在日本警视厅现存记录中存有五万起，而之后每年屡有发生。</p>
+      </div>
+    </div>
+    <div class="card card2">
+      <div class="image right" style="background-image: url('img/丑闻_卡片2.jpeg')"></div>
+      <div class="content">
+        <h2>毒品腐败</h2>
+        <p>墨西哥是美国毒品走私的重点国家，而在美国和墨西哥边界地区墨西哥境内财势雄厚的毒品走私组织利用各种手段逐渐腐蚀边境正规军队和国民警卫队，其中最大的走私案件是在2005年美军走私560公斤毒品。为了打击美墨边境的军队走私毒品案件，2003年美国中央情报局成立了一个反贪污特警队“绿色行动”（OperationLivelyGreen）专项打击军队走私。</p>
+		<p>但由于美军在全球都驻有基地和部队并且军队管理制度和人员素质问题国际毒品走私事件也频有发生，以在韩国为例，在2012年上半年韩国海关就查获了可供5万人引用的2878克美军毒品，一些媒体批评美军走私毒品正在腐蚀韩国社会。</p>
+      </div>
+    </div>
+    <div class="card card3">
+      <div class="image left" style="background-image: url('img/丑闻_卡片3.jpg')"></div>
+      <div class="content">
+        <h2>虐待俘虏</h2>
+        <p>●美军虐待伊拉克战俘问题真正引起全世界震动源自于哥伦比亚广播公司（CBS）4月28日刊登美军虐待伊拉克囚犯的照片，照片显示，一名美军宪兵勒令伊拉克战俘站在箱子上，战俘被蒙上头，手上连着电线。宪兵威胁说，如果战俘从箱子上倒下，就会被电死。另一张照片显示，伊拉克战俘被勒令进行人体堆叠，组成金字塔形状。事件暴露后驻伊美军高级官员表示，美军3月已宣布驻巴格达的美军第800宪兵旅6名成员因虐待大约20名伊战俘将面临军事法庭审判，美军协助管理战俘的7名军官也将受到纪律处分，包括第800旅最高长官等人。</p>
+		<p>●2004年无罪释放的三名英国人宣称，营中美军对囚犯实施持续不断的拷问、性虐待、强行注射药品和宗教迫害等暴行。三人发布了115页的卷宗详细描绘这些指控[10]。他们同时也谴责英国当局知晓此事但没有干预。这些人的声明得到两位法国前囚犯、一位瑞典前囚犯和一位澳大利亚前囚犯的支持。一位海军总监察长已经对关塔那摩基地的情况进行了调查，结论是"执行过程都是高标准的"。前受押人员Moazzam Begg在2005年1月25日，关满3年后获释，他指责美国军人对他及其他从阿富汗和巴基斯坦抓捕的囚犯严刑拷打。在释放后第一次广播访问中，他声称“亲眼见到两个人被暴打得不成样子，我觉得应该是被打死了。” </p>
+      </div>
+    </div>
+    <div class="card card4">
+      <div class="image right" style="background-image: url('img/丑闻_卡片4.jpg')"></div>
+      <div class="content">
+        <h2>恐怖主义指控</h2>
+        <p>2019年4月8日，美国及以色列将伊朗伊斯兰革命卫队列为恐怖组织。作为回应，伊朗最高国家安全委员会宣布将美军列为“恐怖组织”</p>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button id="prev-button">上一张</button>
+      <button id="next-button">下一张</button>
+    </div>
+  </div>
+  <script>
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+    const cardSlider = document.getElementById('card-slider');
+    const cards = cardSlider.getElementsByClassName('card');
+    let currentCard = 0;
+
+// 隐藏除当前卡片外的所有卡片
+function showCard(index) {
+  for (let i = 0; i < cards.length; i++) {
+    if (i === index) {
+      cards[i].style.display = 'flex';
+    } else {
+      cards[i].style.display = 'none';
+    }
+  }
+}
+
+// 上一张卡片
+prevButton.addEventListener('click', function() {
+  currentCard--;
+  if (currentCard < 0) {
+    currentCard = cards.length - 1;
+  }
+  showCard(currentCard);
+});
+
+// 下一张卡片
+nextButton.addEventListener('click', function() {
+  currentCard++;
+  if (currentCard >= cards.length) {
+    currentCard = 0;
+  }
+  showCard(currentCard);
+});
+
+// 初始显示第一张卡片
+showCard(currentCard);
+  </script>
+</body>
+</html>
